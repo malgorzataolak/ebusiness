@@ -7,5 +7,6 @@ case class Product(name: String, description: String, price: Int, category: Cate
 case class Cart(item: CartItem)
 case class CartItem(cart:Cart, item: Product)
 case class Category(categoryName: String)
-case class Order(firstName:String, lastName: String, email: String, totalPrice: Int, cart: Cart )
+case class Order(orderItem: OrderItem)
+case class OrderItem(name:Cart)
 

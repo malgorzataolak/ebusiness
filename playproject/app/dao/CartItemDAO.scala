@@ -29,6 +29,7 @@ class CartItemDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvid
     def cartItemID=column[Int]("CART ITEM ID", O.AutoInc, O.AutoInc)
     def name=column[String]("NAME", O.PrimaryKey)
     def quantity=column[Int]("QUANTITY")
+    def cartID=column[Int]("CART ID")
     
     def * =(cartItemID, name, quantity)<>(CartItem.tupled, CartItem.unapply _)
    

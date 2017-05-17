@@ -26,10 +26,17 @@ class OrderDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvider)
 
   private class OrdersTable(tag: Tag) extends Table[Order](tag, "ORDER") {
 
-    def idOrder=column[Int]("ORDER ID")
-    def productName=column[String]("NAME", O.PrimaryKey)
-    def quantity=column[Int]("QUANTITY")
-    def *=(idOrder, productName, quantity)<> Order.tupled, Order.unapply _)
+    def idOrder=column[Int]("ORDER ID" O.PrimaryKey)
+    def firstName=column[String]("FIRST NAME")
+    def lastName=column[String]("LAST NAME")
+    def email=column[String]("EMAIL")
+    def streetName = column[String]("STREET")
+    def houseNumber=column[Int]("HOUSE NUMBER")
+    def city = column[String]("CITY")
+    def zipCode = column[String]("ZIP CODE")
+    def country = column[String]("COUNTRY")
+    def phoneNumber = column[String]("PHONE NUMBER")
+    def *=(idOrder, firstame, lastName, email, streetName, houseNumber, city, zipCode, country, phoneNumber)<> Order.tupled, Order.unapply _)
   }
 
 }
