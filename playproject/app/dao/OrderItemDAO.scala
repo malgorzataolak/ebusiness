@@ -30,7 +30,7 @@ class OrderItemDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvi
     def orderID=column[Int]("ORDER ID")
     def quantity=column[Int]("QUANTITY")
     def unitPrice=column[Int]("UNIT PRICE")
-    def *=(idOrder, firstame, lastName, email, streetName, houseNumber, city, zipCode, country, phoneNumber)<> Order.tupled, Order.unapply _)
+    def *=(itemName, orderID, quatity, unitPrice)<> Order.tupled, Order.unapply _)
   }
 
 }
