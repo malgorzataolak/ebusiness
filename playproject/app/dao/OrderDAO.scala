@@ -21,9 +21,15 @@ class OrderDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvider)
 
   def insert(order: Order): Future[Unit] = db.run(Orders += order).map { _ => () }
 
+  def delete(id:Int):Future[Unit]=db.run(Orders.filter(_.id===id).delete).map(_=>())
+
+
   private class OrdersTable(tag: Tag) extends Table[Order](tag, "ORDER") {
 
-    /*stub for table configuration */
+    def idOrder=column[Int]("ORDER ID")
+    def productName=column[String]("NAME", O.PrimaryKey)
+    def quantity=column[Int]("QUANTITY")
+    def *=(idOrder, productName, quantity)<> Order.tupled, Order.unapply _)
   }
 
 }

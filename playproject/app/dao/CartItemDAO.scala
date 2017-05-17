@@ -26,18 +26,12 @@ class CartItemDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvid
 
   private class CartItemsTable(tag: Tag) extends Table[CartItem](tag, "CART ITEM") {
 
-    /*
-
-    def name = column[String]("NAME", O.PrimaryKey)
-
-    def description = column[String]("DESCRIPTION")
-
-    def price = column[Int]("PRICE")
-
-    def category=column[String]("CATEGORY")
-
-    def * = (name, description, price) <>(Product.tupled, Product.unapply _)
-    */
+    def cartItemID=column[Int]("CART ITEM ID", O.AutoInc, O.AutoInc)
+    def name=column[String]("NAME", O.PrimaryKey)
+    def quantity=column[Int]("QUANTITY")
+    
+    def * =(cartItemID, name, quantity)<>(CartItem.tupled, CartItem.unapply _)
+   
   }
 
 

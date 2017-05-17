@@ -29,19 +29,11 @@ class CartDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvider)
 
   private class CartsTable(tag: Tag) extends Table[Cart](tag, "CART") {
 
-    /* CartItem here
-
-    def name = column[String]("NAME", O.PrimaryKey)
-
-    def description = column[String]("DESCRIPTION")
-
-    def price = column[Int]("PRICE")
-
-    def category=column[String]("CATEGORY")
-
-    def * = (name, description, price) <>(Product.tupled, Product.unapply _)
-
-    */
+    def cartID=column[Int]("CART ID", O.AutoInc, O.AutoInc)
+    def name=column[String]("NAME", O.PrimaryKey)
+    def quantity=column[Int]("QUANTITY")
+    
+    def * =(cartID, name, quantity)<>(Cart.tupled, Cart.unapply _)
   }
 
 

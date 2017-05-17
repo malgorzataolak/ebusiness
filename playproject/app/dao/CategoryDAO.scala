@@ -26,13 +26,13 @@ class CategoryDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvid
 
 
   private class CategoriesTable(tag: Tag) extends Table[Product](tag, "PRODUCT") {
-    /*
+   
 
     def name = column[String]("NAME", O.PrimaryKey)
 
 
     def * = (name, description, price) <>(Product.tupled, Product.unapply _)
-    */
+   
   }
 
 
