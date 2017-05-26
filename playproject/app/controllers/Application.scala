@@ -13,4 +13,37 @@ object Application extends Controller {
     Ok(views.html.addNewProduct())
   }
 
+
+  def productsDetial(name:String)=Action{
+    Ok(views.html.productsDetail())
+    }
+
+  def productsByCategory(categoryName:String)=Action{
+    Ok(views.html.productsByCategory())
+    }
+
+  def order=Action{
+    Ok(views.html.order())
+    }
+
+   def cart=Action{
+    Ok(views.html.cart())
+    }
+
+   def updateCart=Action{
+    Ok(views.html.cart())
+    }
+
+   def editProduct=Action{
+    Ok(views.html.productsDetail())
+    }
+
+   def addItemToCart(name:String)=Action{
+    Ok(views.html.cart())
+    }
+
+    def removeItemFromCart(name:String)=Action{
+    Ok(views.html.cart())
+    }
+
 }

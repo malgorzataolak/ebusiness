@@ -5,6 +5,22 @@
 # Home page
 GET     /                           controllers.Application.index
 POST    /addnewproduct              controllers.Application.addNewProduct
+GET     /productDetail/:name        controllers.Application.productsDetail(name:String)
+GET     /productsByCategory/:categoryName        controllers.Application.productsByCategory(categoryName:String)
+POST    /editProduct                controllers.Application.editProduct
+
+
+GET     /order                      controllers.Application.order
+POST    /sendOrder                  controllers.Application.sendOrder
+
+GET     /cart                       controllers.Application.cart
+POST    /updateCart                 controllers.Application.updateCart
+GET     /addItemToCart/:name        controllers.Application.addItemToCart(name:String)
+GET     /removeItemFromCart/:name         controllers.Application.removeItemFromCart(name:String)
+
+
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
