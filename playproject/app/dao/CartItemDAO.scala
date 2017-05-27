@@ -26,7 +26,7 @@ class CartItemDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvid
 
   private class CartItemsTable(tag: Tag) extends Table[CartItem](tag, "CART ITEM") {
 
-    def cartItemID=column[Int]("CART ITEM ID", O.AutoInc, O.AutoInc)
+    def cartID=column[Int]("CART ITEM ID", O.AutoInc, O.AutoInc)
     def name=column[String]("NAME", O.PrimaryKey)
     def quantity=column[Int]("QUANTITY")
     def cartID=column[Int]("CART ID")
