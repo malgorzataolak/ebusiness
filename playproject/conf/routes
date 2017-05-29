@@ -4,10 +4,10 @@
 
 # Home page
 GET     /                           controllers.Application.index
-POST    /addnewproduct              controllers.Application.addNewProduct
-GET     /productDetail/:name        controllers.Application.productsDetail(name:String)
-GET     /productsByCategory/:categoryName        controllers.Application.productsByCategory(categoryName:String)
-POST    /editProduct                controllers.Application.editProduct
+POST    /addnewproduct              controllers.ProductController.addNewProduct
+GET     /productDetail/:name        controllers.ProductController.productsDetail(name:String)
+GET     /productsByCategory/:categoryName        controllers.ProductController.productsByCategory(categoryName:String)
+POST    /editProduct                controllers.ProductController.editProduct
 
 
 GET     /order                      controllers.Application.order

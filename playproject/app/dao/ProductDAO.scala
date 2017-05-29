@@ -24,16 +24,29 @@ class ProductDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvide
 
   def delete(name: String): Future[Unit] = db.run(Products.filter(_.name === name).delete).map(_ => ())
 
-  def findById(name: String): Future[Option[Product]] = db.run(Products.filter(_.name === name).result.headOption)
+  def findById(id: Int): Future[Option[Product]] = db.run(Products returning Products.map(_.id)) += product)
 
   def update(name: String, product: Product): Future[Unit] = {
     val productToUpdate: Product = product.copy(name)
     db.run(Products.filter(_.name === name).update(productToUpdate)).map(_ => ())
   }
 
+  def findByName(text: String): Future[Seq[Product]] =
+  {
+    db.run(Products.filter(_.name like s"%$text%").result)
+  }
+
+  def findByCategory(text:String):Future[Seq[Product]] =
+  {
+    db.run(Products.filter(_.category like s"%$text%").result)
+
+   }
+
   private class ProductsTable(tag: Tag) extends Table[Product](tag, "PRODUCT") {
 
-    def name = column[String]("NAME", O.PrimaryKey)
+    def id = column[Int]("ID", O.PrimaryKey,O.AutoInc)
+    
+    def name = column[String]("NAME")
 
     def description = column[String]("DESCRIPTION")
 
@@ -41,7 +54,7 @@ class ProductDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvide
 
     def category=column[String]("CATEGORY")
 
-    def * = (name, description, price, category) <>(Product.tupled, Product.unapply _)
+    def * = (id.?, name, description, price, category) <>(Product.tupled, Product.unapply _)
   }
 
 

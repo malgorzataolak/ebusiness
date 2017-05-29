@@ -9,19 +9,7 @@ object Application extends Controller {
     Ok(views.html.index("Your new application is ready."))
   }
 
-  def addNewProduct=Action{
-    Ok(views.html.addNewProduct())
-  }
-
-
-  def productsDetial(name:String)=Action{
-    Ok(views.html.productsDetail())
-    }
-
-  def productsByCategory(categoryName:String)=Action{
-    Ok(views.html.productsByCategory())
-    }
-
+  
   def order=Action{
     Ok(views.html.order())
     }
@@ -32,10 +20,6 @@ object Application extends Controller {
 
    def updateCart=Action{
     Ok(views.html.cart())
-    }
-
-   def editProduct=Action{
-    Ok(views.html.productsDetail())
     }
 
    def addItemToCart(name:String)=Action{
