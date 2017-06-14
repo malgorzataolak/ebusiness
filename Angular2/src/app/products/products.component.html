@@ -1,0 +1,14 @@
+<select (change)="selectedCategory = $event.target.value">
+   <option>EKOKosmetyki</option>
+   <option>Dermokosmetyki</option>
+   <option>Dla Mamy</option>
+</select>
+<ul id="category">
+  <li *ngFor="let product of products | myfilter:selectedCategory">{{product.nazwa}}
+  <p>Zawartość:{{product.opis}}</p>
+  <p>Cena:{{product.cena}}</p>
+  <p>{{product.kategoria}}</p>
+  <button>Dodaj do koszyka</button>
+  </li>
+  
+</ul>
