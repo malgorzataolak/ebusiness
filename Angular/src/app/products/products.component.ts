@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
+import { ProductsService } from './products.service';
+import { ActivatedRoute } from "@angular/router";
 
 
 const PRODUCTS: Product[]=[
@@ -17,7 +19,21 @@ const PRODUCTS: Product[]=[
   selector: 'products',
   templateUrl: './products.component.html',
 })
-export class ProductsComponent {
-  products=PRODUCTS;
+
+
+export class ProductsComponent implements OnInit{
+//products:Product[];
+constructor(private productsService: ProductsService, private route: ActivatedRoute){}
+ngOnInit() {
+    //this.productService.getProducts().subscribe(data => this.products = data);
+  }
+
+  products=PRODUCTS; //rozwiazanie tymczasowe
   selectedCategory: string="EKOKosmetyki";
+
+  public currentProduct;
+   
+  addToCart(product){ 
+  this.currentProduct=product;
+  this.productsService.addProductToCart(this.currentProduct); }
 }

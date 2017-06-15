@@ -1,2 +1,33 @@
 <h1>{{title}}</h1>
-<a routerLink="/sendOrder" routerLinkActive="active">Złóż zamówienie</a>
+
+
+<form [formGroup]="dataForm" (ngSubmit)="makeOrder($event)">
+  <div class="form-group">
+ <label for="firstName">Imię</label><input id="firstName" formControlName="firstName" type="text" placeholder="Imie" class=".form-control">
+  </div>
+  <div class="form-group">
+  <label for="lastName">Nazwisko</label><textarea id="lastName" formControlName="lastName" placeholder="Nazwisko" class=".form-control"></textarea>
+  </div>
+  <div class="form-group">
+  <label for="email">Email</label><textarea id="email" formControlName="email" placeholder="Email" class=".form-control"></textarea>
+  </div>
+  <div class="form-group">
+  <label for="adress">Adres</label><textarea id="adress" formControlName="adress" placeholder="Adres" class=".form-control"></textarea>
+  </div>
+  <div class="form-group">
+  <label for="city">Miasto</label><textarea id="city" formControlName="city" placeholder="Miasto" class=".form-control"></textarea>
+  </div>
+  <div class="form-group">
+  <label for="zipCode">Kod Pocztowy</label><textarea id="zipCode" formControlName="zipCode" placeholder="Kod pocztowy" class=".form-control"></textarea>
+  </div>
+  <div class="form-group">
+  <label for="country">Kraj</label><textarea id="country" formControlName="country" placeholder="Kraj" class=".form-control"></textarea>
+  </div>
+  <div class="form-group">
+  <label for="phone">Telefon</label><textarea id="phone" formControlName="phone" placeholder="Telefon" class=".form-control"></textarea>
+  </div>
+  <button type="submit">Add</button>
+  <a routerLink="/sendOrder" routerLinkActive="active">Złóż zamówienie</a>
+</form>
+
+

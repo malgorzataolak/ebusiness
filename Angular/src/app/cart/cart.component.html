@@ -1,2 +1,11 @@
 <h1>{{title}}</h1>
+<ul class="category">
+  <li *ngFor="let product of products" (click)=deleteProduct(product)>
+  {{product.nazwa}}
+  <p>Cena:{{product.cena}}</p>
+  <p>{{product.kategoria}}</p>
+  <button type="submit">Usuń</button>
+  </li> 
+</ul>
+
 <a routerLink="/order" routerLinkActive="active">ZAMAWIAM</a>

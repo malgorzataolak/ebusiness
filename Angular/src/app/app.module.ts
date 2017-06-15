@@ -13,6 +13,8 @@ import { OrderComponent } from './order/order.component';
 import { ProductsComponent} from './products/products.component';
 import { SendOrderComponent } from './order/sendOrder.component';
 import { ProductsService } from './products/products.service';
+import { OrderService } from './order/order.service';
+import { CartService } from './cart/cart.service';
 
 
 
@@ -38,7 +40,7 @@ import { ProductsService } from './products/products.service';
       { path: 'sendOrder', component: SendOrderComponent },
       ])
   ],
-  providers: [ProductsService],
+  providers: [ProductsService, OrderService, CartService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,8 +3,8 @@
    <option>Dermokosmetyki</option>
    <option>Dla Mamy</option>
 </select>
-<ul id="category">
-  <li *ngFor="let product of products | myfilter:selectedCategory">{{product.nazwa}}
+<ul class="category">
+  <li *ngFor="let product of products | myfilter:selectedCategory" (click)="addToCart(product)">{{product.nazwa}}
   <p>Zawartość:{{product.opis}}</p>
   <p>Cena:{{product.cena}}</p>
   <p>{{product.kategoria}}</p>
@@ -12,3 +12,5 @@
   </li>
   
 </ul>
+
+
