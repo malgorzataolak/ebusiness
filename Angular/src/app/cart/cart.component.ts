@@ -34,5 +34,6 @@ export class CartComponent implements OnInit{
   deleteProduct(product){
   this.currentProduct=product;
   console.log(this.currentProduct);
-  this.cartService.deleteProductFromCart(this.currentProduct);}
+  this.cartService.deleteProductFromCart(this.currentProduct);
+  window.location.reload();}
 }

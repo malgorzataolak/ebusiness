@@ -26,7 +26,25 @@
   <div class="form-group">
   <label for="phone">Telefon</label><textarea id="phone" formControlName="phone" placeholder="Telefon" class=".form-control"></textarea>
   </div>
-  <button type="submit">Add</button>
+  <div class="form-group">
+  <label for="delivery">Dostawa</label>
+    <div *ngFor="let d of deliveryItems">
+        <label>
+        <input formControlName="delivery" type="radio" name="delivery" [value]="d.value">
+        {{d.display}}
+        </label>
+    </div>
+  </div>
+  <div class="form-group">
+  <label for="payment">Opcje płatności</label>
+    <div *ngFor="let p of paymentItems">
+        <label>
+        <input formControlName="payment" type="radio" name="payment" [value]="p.value">
+        {{p.display}}
+        </label>
+    </div>
+  </div>
+  <button type="submit">POTWIERDZAM DANE</button>
   <a routerLink="/sendOrder" routerLinkActive="active">Złóż zamówienie</a>
 </form>
 

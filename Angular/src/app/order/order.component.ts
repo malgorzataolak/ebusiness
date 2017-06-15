@@ -17,6 +17,21 @@ export class OrderComponent implements OnInit {
 
   dataForm : FormGroup; 
 
+  public deliveryItems=[
+    {value:'osobisty', display: 'Odbiór osobisty'},
+    {value: 'kurier', display: 'Kurier DPD'},
+    {value: 'paczkomat', display: 'Paczkomaty Inpost'},
+    {value: 'poczta', display: 'Poczta Polska'}
+  ]
+
+  public paymentItems=[
+    {value: 'przelew', display: 'Przedpłata przelewem'},
+    {value: 'pobranie', display: 'Płatność za pobraniem'},
+    {value: 'karta', display: 'Kartą kredytową'},
+    {value: 'payu', display: 'Płatność w systemie PayU'},
+    {value: 'paypal', display: 'Platnosc metodą PayPal'}
+  ]
+
   constructor(private orderService: OrderService, private route: ActivatedRoute) { }
   ngOnInit(){
         this.dataForm = new FormGroup({
@@ -27,7 +42,9 @@ export class OrderComponent implements OnInit {
       city: new FormControl('', Validators.required),
       zipCode: new FormControl('', Validators.required),
       country: new FormControl('', Validators.required),
-      phone: new FormControl('', Validators.required)
+      phone: new FormControl('', Validators.required),
+      delivery: new FormControl('', Validators.required),
+      payment: new FormControl('', Validators.required)
       });
 }
 
