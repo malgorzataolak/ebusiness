@@ -15,6 +15,9 @@ import { SendOrderComponent } from './order/sendOrder.component';
 import { ProductsService } from './products/products.service';
 import { OrderService } from './order/order.service';
 import { CartService } from './cart/cart.service';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
+
 
 
 
@@ -25,6 +28,7 @@ import { CartService } from './cart/cart.service';
     OrderComponent,
     ProductsComponent,
     SendOrderComponent,
+    LoginComponent,
     MyFilterPipe
   ],
   imports: [
@@ -38,9 +42,11 @@ import { CartService } from './cart/cart.service';
       { path: 'cart', component: CartComponent},
       { path: 'order', component: OrderComponent},
       { path: 'sendOrder', component: SendOrderComponent },
+      { path: 'login', component: LoginComponent},
+      { path: 'callback', component: LoginComponent},
       ])
   ],
-  providers: [ProductsService, OrderService, CartService ],
+  providers: [ProductsService, OrderService, CartService, LoginService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

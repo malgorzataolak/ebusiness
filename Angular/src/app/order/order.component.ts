@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from './order.service';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
+import { LoginService } from '../login/login.service';
 
 
 
@@ -32,7 +33,7 @@ export class OrderComponent implements OnInit {
     {value: 'paypal', display: 'Platnosc metodą PayPal'}
   ]
 
-  constructor(private orderService: OrderService, private route: ActivatedRoute) { }
+  constructor(private orderService: OrderService, private loginService: LoginService, private route: ActivatedRoute) { }
   ngOnInit(){
         this.dataForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
@@ -46,10 +47,14 @@ export class OrderComponent implements OnInit {
       delivery: new FormControl('', Validators.required),
       payment: new FormControl('', Validators.required)
       });
+
+
 }
 
 makeOrder(event){
+    console.log(this.loginService.userProfile);
     this.orderService.sendDataToPlay(this.dataForm.value);
 }
+
 
 }

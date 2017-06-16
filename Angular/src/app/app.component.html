@@ -18,7 +18,10 @@
       <li class="active"><a href="#">Strona główna</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+    <div *ngIf="authenticated">
       <li><a routerLink="/cart" routerLinkActive="active"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Koszyk</a></li>
+    </div>
+    
     </ul>
   </div>
 </nav>
