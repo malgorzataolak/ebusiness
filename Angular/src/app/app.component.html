@@ -1,4 +1,15 @@
-<nav class="navbar navbar-default">
+
+    
+
+<div class="container-fluid wrap">
+ <div class="my-header">
+     <h1>
+       Kosmetyki z pudełka
+     </h1>
+     <p>Twój naturalny wybór!</p>
+     <img class="img-responsive" src="app/Images/tlo2.jpg">
+
+     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Kosmetyki z pudełka</a>
@@ -7,28 +18,13 @@
       <li class="active"><a href="#">Strona główna</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    	<li><a routerLink="/cart" routerLinkActive="active"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Koszyk</a></li>
+      <li><a routerLink="/cart" routerLinkActive="active"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Koszyk</a></li>
     </ul>
   </div>
 </nav>
-
-    
-
-<div class="container-fluid wrap">
- <div class="my-header">
- <div class="row">
-     <h1 class="col-md-8">
-       Kosmetyki z pudełka
-     </h1>
-     <img class="col-md-4 img-responsive" src="app/Images/naglowek.jpg">
-   <p>Wybierz swoje pudełko-niespodziankę z wartościowymi kosmetykami!</p>
-   </div>
  </div>
 
 
-<h1>
-  {{title}}
-</h1>
 
 <router-outlet></router-outlet>
 </div>

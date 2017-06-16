@@ -2,7 +2,7 @@
 body{
 color:black;
 background-image: url("app/Images/tlo.jpg");
-font-family: 'Julius Sans One', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
 }
 
 .wrap{
@@ -10,27 +10,92 @@ font-family: 'Julius Sans One', sans-serif;
     margin-left:10%;
     margin-right:10%;
     background-color:white;
+    margin-bottom:20px;
+    padding-bottom:10px;
 -webkit-box-shadow: -3px -2px 22px -8px rgba(0,0,0,0.75);
 -moz-box-shadow: -3px -2px 22px -8px rgba(0,0,0,0.75);
 box-shadow: -3px -2px 22px -8px rgba(0,0,0,0.75);
         
 }
 
-.my-header img{
-    padding:0%;
+.navbar{
+margin-bottom:4px;
 }
+
 
 .my-header h1{
     font-family: 'Lobster', cursive;
-    padding-top:70px;
-    padding-left:40px;
+    color:#562F3F;
+    text-shadow: rgb(255, 176, 208) 3px 0px 0px, rgb(255, 176, 208) 2.83487px 0.981584px 0px, rgb(255, 176, 208) 2.35766px 1.85511px 0px, rgb(255, 176, 208) 1.62091px 2.52441px 0px, rgb(255, 176, 208) 0.705713px 2.91581px 0px, rgb(255, 176, 208) -0.287171px 2.98622px 0px, rgb(255, 176, 208) -1.24844px 2.72789px 0px, rgb(255, 176, 208) -2.07227px 2.16926px 0px, rgb(255, 176, 208) -2.66798px 1.37182px 0px, rgb(255, 176, 208) -2.96998px 0.42336px 0px, rgb(255, 176, 208) -2.94502px -0.571704px 0px, rgb(255, 176, 208) -2.59586px -1.50383px 0px, rgb(255, 176, 208) -1.96093px -2.27041px 0px, rgb(255, 176, 208) -1.11013px -2.78704px 0px, rgb(255, 176, 208) -0.137119px -2.99686px 0px, rgb(255, 176, 208) 0.850987px -2.87677px 0px, rgb(255, 176, 208) 1.74541px -2.43999px 0px, rgb(255, 176, 208) 2.44769px -1.73459px 0px, rgb(255, 176, 208) 2.88051px -0.838247px 0px;
+    padding-top:220px;
+    padding-left:20%;
     font-size:5em;
+    position:absolute;
 
 }
 
 .my-header p{
+    
     position:absolute;
-    padding-top:180px;
-    padding-left:100px;
-    font-size:1.5em;
+    padding-top:328px;
+    padding-left:30%;
+    color:#562F3F;
+    font-size:2em;
+text-shadow: rgb(255, 176, 208) 3px 0px 0px, rgb(255, 176, 208) 2.83487px 0.981584px 0px, rgb(255, 176, 208) 2.35766px 1.85511px 0px, rgb(255, 176, 208) 1.62091px 2.52441px 0px, rgb(255, 176, 208) 0.705713px 2.91581px 0px, rgb(255, 176, 208) -0.287171px 2.98622px 0px, rgb(255, 176, 208) -1.24844px 2.72789px 0px, rgb(255, 176, 208) -2.07227px 2.16926px 0px, rgb(255, 176, 208) -2.66798px 1.37182px 0px, rgb(255, 176, 208) -2.96998px 0.42336px 0px, rgb(255, 176, 208) -2.94502px -0.571704px 0px, rgb(255, 176, 208) -2.59586px -1.50383px 0px, rgb(255, 176, 208) -1.96093px -2.27041px 0px, rgb(255, 176, 208) -1.11013px -2.78704px 0px, rgb(255, 176, 208) -0.137119px -2.99686px 0px, rgb(255, 176, 208) 0.850987px -2.87677px 0px, rgb(255, 176, 208) 1.74541px -2.43999px 0px, rgb(255, 176, 208) 2.44769px -1.73459px 0px, rgb(255, 176, 208) 2.88051px -0.838247px 0px;
+    
 }
+
+h1{
+    font-size: 2em;
+    text-align:center;
+}
+
+ul.category li {
+    list-style-type:none;
+    height:250px;
+    background-color:#E0F1ED;
+    padding:4%;
+    border-radius: 18px 18px 18px 18px;  
+    color:#538C88;        
+}
+
+ul.category li p{
+    font-size: 1.1em;
+}
+
+
+.category button, button.delete{
+border-style:none;
+    background-color:#E0F1ED;
+    padding:4px;
+}
+
+.category button i:hover, button.delete i:hover{
+    color:#78B9B4;
+}
+.col-md-6.product{
+    width:49%;
+    margin:0.5%;
+    padding:2%;
+}
+
+.footer {
+	background: #EDEFF1;
+	height: auto;
+	padding: 5px;
+	width: 100%;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #DDDDDD;
+    text-align:center;
+    font-size:0.8em;
+}
+
+.footer p{
+    margin-bottom:0px;
+    padding-top:5px;
+}
+
+.my-header img{
+    padding:0%;
+}
+

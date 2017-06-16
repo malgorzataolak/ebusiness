@@ -1,0 +1,27 @@
+.tag{
+    width:60%;
+    margin-left:20%;
+    text-align:center;
+}
+ul{
+    padding:0;
+    width:60%;
+    margin-left:20%;
+
+}
+
+p{
+    margin-bottom:0px;}
+
+
+ul.category li{
+height:auto;
+margin-bottom:3px;
+text-align:center;
+font-size:1.2em;
+}
+
+.sum a{
+    font-size:1.3em;
+    padding:10px;
+}

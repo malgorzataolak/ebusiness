@@ -1,15 +1,19 @@
+<p class="description">Przygotowaliśmy dla Ciebie pudełka z kosmetykami produkowanymi naturalnie. Dzięki krótkim opisom możesz dowiedzieć się jakiego typu produkty wchodzą w skład pudełka - ale marka każdego z produktów pozostanie dla Ciebie niespodzianką aż do otwarcia! Kupując gotowe pudełko płacisz taniej niż za pojedynczy produkt w sklepie!</p>
+<p class="selectcategory">Wybierz kategorię:</p>
 <select (change)="selectedCategory = $event.target.value">
    <option>EKOKosmetyki</option>
    <option>Dermokosmetyki</option>
    <option>Dla Mamy</option>
 </select>
 <ul class="category">
-  <li *ngFor="let product of products | myfilter:selectedCategory" (click)="addToCart(product)">{{product.nazwa}}
-  <p>Zawartość:{{product.opis}}</p>
-  <p>Cena:{{product.cena}}</p>
-  <p>{{product.kategoria}}</p>
-  <button>Dodaj do koszyka</button>
+<div class="row">
+  <li class="col-md-6 product" *ngFor="let product of products | myfilter:selectedCategory" (click)="addToCart(product)"><h2>{{product.nazwa}}</h2>
+  <p>Zawartość: {{product.opis}}</p>
+  <p>Cena: {{product.cena}}</p>
+  <p>Kategoria: {{product.kategoria}}</p>
+  <button class="pull-right"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button>
   </li>
+  </div>
   
 </ul>
 

@@ -2,31 +2,87 @@
 
 
 <form [formGroup]="dataForm" (ngSubmit)="makeOrder($event)">
+<div class="row">
   <div class="form-group">
- <label for="firstName">Imię</label><input id="firstName" formControlName="firstName" type="text" placeholder="Imie" class=".form-control">
+  <div class="col-md-6">
+ <label for="firstName">Imię:</label>
+ </div>
+ <div class="col-md-6">
+ <input id="firstName" formControlName="firstName" type="text" placeholder="Imie" class=".form-control">
+ </div>
   </div>
-  <div class="form-group">
-  <label for="lastName">Nazwisko</label><textarea id="lastName" formControlName="lastName" placeholder="Nazwisko" class=".form-control"></textarea>
   </div>
+  <div class="row">
   <div class="form-group">
-  <label for="email">Email</label><textarea id="email" formControlName="email" placeholder="Email" class=".form-control"></textarea>
+  <div class="col-md-6">
+  <label for="lastName">Nazwisko:</label>
   </div>
-  <div class="form-group">
-  <label for="adress">Adres</label><textarea id="adress" formControlName="adress" placeholder="Adres" class=".form-control"></textarea>
+  <div class="col-md-6">
+  <textarea id="lastName" formControlName="lastName" placeholder="Nazwisko" class=".form-control"></textarea>
   </div>
-  <div class="form-group">
-  <label for="city">Miasto</label><textarea id="city" formControlName="city" placeholder="Miasto" class=".form-control"></textarea>
   </div>
-  <div class="form-group">
-  <label for="zipCode">Kod Pocztowy</label><textarea id="zipCode" formControlName="zipCode" placeholder="Kod pocztowy" class=".form-control"></textarea>
   </div>
+  <div class="row">
   <div class="form-group">
-  <label for="country">Kraj</label><textarea id="country" formControlName="country" placeholder="Kraj" class=".form-control"></textarea>
+  <div class="col-md-6">
+  <label for="email">Email:</label>
   </div>
-  <div class="form-group">
-  <label for="phone">Telefon</label><textarea id="phone" formControlName="phone" placeholder="Telefon" class=".form-control"></textarea>
+  <div class="col-md-6"><textarea id="email" formControlName="email" placeholder="Email" class=".form-control"></textarea>
   </div>
+  </div>
+  </div>
+  <div class="row">
   <div class="form-group">
+  <div class="col-md-6">
+  <label for="adress">Adres:</label>
+  </div>
+  <div class="col-md-6">
+  <textarea id="adress" formControlName="adress" placeholder="Adres" class=".form-control"></textarea>
+  </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="form-group">
+  <div class="col-md-6">
+  <label for="city">Miasto:</label>
+  </div>
+  <div class="col-md-6">
+  <textarea id="city" formControlName="city" placeholder="Miasto" class=".form-control"></textarea>
+  </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="form-group">
+    <div class="col-md-6">
+  <label for="zipCode">Kod Pocztowy:</label>
+  </div>
+  <div class="col-md-6">
+  <textarea id="zipCode" formControlName="zipCode" placeholder="Kod pocztowy" class=".form-control"></textarea>
+  </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="form-group">
+  <div class="col-md-6">
+  <label for="country">Kraj:</label>
+  </div>
+  <div class="col-md-6">
+  <textarea id="country" formControlName="country" placeholder="Kraj" class=".form-control"></textarea>
+  </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="form-group">
+  <div class="col-md-6">
+  <label for="phone">Telefon:</label>
+  </div>
+  <div class="col-md-6">
+  <textarea id="phone" formControlName="phone" placeholder="Telefon" class=".form-control"></textarea>
+  </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="form-group col-md-6">
   <label for="delivery">Dostawa</label>
     <div *ngFor="let d of deliveryItems">
         <label>
@@ -35,7 +91,7 @@
         </label>
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group col-md-6">
   <label for="payment">Opcje płatności</label>
     <div *ngFor="let p of paymentItems">
         <label>
@@ -44,8 +100,11 @@
         </label>
     </div>
   </div>
+  </div>
+  <div class="pull-right">
   <button type="submit">POTWIERDZAM DANE</button>
-  <a routerLink="/sendOrder" routerLinkActive="active">Złóż zamówienie</a>
+  <a routerLink="/sendOrder" routerLinkActive="active">Złóż zamówienie <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></a>
+  </div>
 </form>
 
 

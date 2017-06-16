@@ -1,11 +1,23 @@
 <h1>{{title}}</h1>
+<div class="row tag">
+  <p class="col-md-3">Nazwa</p>
+  <p class="col-md-3">Kategoria</p>
+  <p class="col-md-3">Cena</p>
+  <p class="col-md-3">Usuń z koszyka</p>
+  </div>
 <ul class="category">
   <li *ngFor="let product of products" (click)=deleteProduct(product)>
-  {{product.nazwa}}
-  <p>Cena:{{product.cena}}</p>
-  <p>{{product.kategoria}}</p>
-  <button type="submit">Usuń</button>
+  <div class="row">
+  <p class="col-md-3">{{product.nazwa}}</p>
+  <p class="col-md-3">{{product.kategoria}}</p>
+  <p class="col-md-3">{{product.cena}}</p>
+  <div class="col-md-3">
+  <button class="delete" type="submit"><i class="fa fa-cart-arrow-down fa-2x" aria-hidden="true"></i></button>
+  </div>
+  </div>
   </li> 
 </ul>
-
-<a routerLink="/order" routerLinkActive="active">ZAMAWIAM</a>
+<div class="pull-right sum">
+<h2>Razem: 50zł</h2>
+<a routerLink="/order" routerLinkActive="active">Przejdź do formularza zamówienia <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></a>
+</div>
