@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
 import { ProductsService } from './products.service';
+import { LoginService } from '../login/login.service';
 import { ActivatedRoute } from "@angular/router";
 
 
@@ -28,13 +29,15 @@ const PRODUCTS: Product[]=[
 
 export class ProductsComponent implements OnInit{
 //products:Product[];
-constructor(private productsService: ProductsService, private route: ActivatedRoute){}
+constructor(private loginService: LoginService, private productsService: ProductsService, private route: ActivatedRoute){}
 ngOnInit() {
     //this.productService.getProducts().subscribe(data => this.products = data);
+    this.authenticated=this.loginService.isAuthenticated();
   }
-
+  public authenticated;
   products=PRODUCTS; //rozwiazanie tymczasowe
   selectedCategory: string="EKOKosmetyki";
+  
 
   public currentProduct;
    

@@ -34,7 +34,7 @@ export class LoginService {
          console.log(localStorage);
          this.success = true;
          window.location.reload();
-         this.router.navigate(['/order']);
+         this.router.navigate(['/']);
        } else if (err) {
          this.router.navigate(['/']);
          console.log(err);

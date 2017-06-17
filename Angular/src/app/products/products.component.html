@@ -7,11 +7,18 @@
 </select>
 <ul class="category">
 <div class="row">
-  <li class="col-md-6 product" *ngFor="let product of products | myfilter:selectedCategory" (click)="addToCart(product)"><h2>{{product.nazwa}}</h2>
+  <li class="col-md-6 product" *ngFor="let product of products | myfilter:selectedCategory" (click)="addToCart(product)"><h2>
+<i class="fa fa-gift" aria-hidden="true"></i> {{product.nazwa}}</h2>
   <p>Zawartość: {{product.opis}}</p>
   <p>Cena: {{product.cena}}</p>
   <p>Kategoria: {{product.kategoria}}</p>
+  <div *ngIf="authenticated">
   <button class="pull-right"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button>
+
+  </div>
+  <div *ngIf="authenticated===false">
+    <p><i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i> Dodawanie do koszyka tylko dla zalogowanych</p>
+  </div>
   </li>
   </div>
   

@@ -1,5 +1,8 @@
 body { 
-    color:blue;
-    background-color: yellow;
+    
+}
+
+a, a:hover {
+    cursor:pointer;
 }
 
