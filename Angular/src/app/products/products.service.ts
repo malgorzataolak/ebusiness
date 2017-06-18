@@ -51,12 +51,11 @@ export class ProductsService {
 profile:any;
 
   addProductToCart(product){ 
-        this.profile=this.loginService.userProfile;
+      
         var cartProduct=new CartProduct();
         cartProduct.id=0;
-        cartProduct.productID=product.ID;
-        cartProduct.userID=this.profile.sub;
-        console.log(this.profile.sub);
+        cartProduct.productID=product.id;
+        cartProduct.userID=localStorage.getItem('userID');
         cartProduct.productName=product.name;
         cartProduct.productPrice=product.price;
          const serializedForm = JSON.stringify(cartProduct);
@@ -67,7 +66,7 @@ profile:any;
         
         const options = new RequestOptions({headers: headers});
 
-    //this.http.post('http://localhost:9000/addcartproduct', serializedForm, options).subscribe(); 
+    this.http.post('http://localhost:9000/addcartproduct', serializedForm, options).subscribe(); 
 }
 
 }

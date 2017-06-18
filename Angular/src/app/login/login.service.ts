@@ -30,9 +30,6 @@ export class LoginService {
        if (authResult && authResult.accessToken && authResult.idToken) {
          window.location.hash = '';
          this.setSession(authResult);
-         console.log(authResult);
-         console.log("HERE");
-         console.log(localStorage);
          this.success = true;
          //window.location.reload();
          this.router.navigate(['/']);
@@ -50,6 +47,7 @@ export class LoginService {
      localStorage.setItem('access_token', authResult.accessToken);
      localStorage.setItem('id_token', authResult.idToken);
      localStorage.setItem('expires_at', expiresAt);
+     localStorage.setItem('userID',authResult.idTokenPayload.sub);
      console.log(authResult);
    }
 
@@ -59,6 +57,7 @@ export class LoginService {
      localStorage.removeItem('access_token');
      localStorage.removeItem('id_token');
      localStorage.removeItem('expires_at');
+     localStorage.removeItem('userID');
      window.location.reload();
      this.router.navigate(['/']);
    }

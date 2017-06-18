@@ -6,11 +6,11 @@
   <p class="col-md-3">Usuń z koszyka</p>
   </div>
 <ul class="category">
-  <li *ngFor="let product of products" (click)=deleteProduct(product)>
+  <li *ngFor="let p of cartProducts" (click)=deleteProduct(p.id)>
   <div class="row">
-  <p class="col-md-3">{{product.nazwa}}</p>
-  <p class="col-md-3">{{product.kategoria}}</p>
-  <p class="col-md-3">{{product.cena}}</p>
+
+  <p class="col-md-3">{{p.productName}}</p>
+  <p class="col-md-3">{{p.productPrice|number:'1.2-2'}}</p>
   <div class="col-md-3">
   <button class="delete" type="submit"><i class="fa fa-cart-arrow-down fa-2x" aria-hidden="true"></i></button>
   </div>
