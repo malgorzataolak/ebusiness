@@ -1,20 +1,23 @@
 <p class="description">Przygotowaliśmy dla Ciebie pudełka z kosmetykami produkowanymi naturalnie. Dzięki krótkim opisom możesz dowiedzieć się jakiego typu produkty wchodzą w skład pudełka - ale marka każdego z produktów pozostanie dla Ciebie niespodzianką aż do otwarcia! Kupując gotowe pudełko płacisz taniej niż za pojedynczy produkt w sklepie!</p>
 <p class="selectcategory">Wybierz kategorię:</p>
+<!--
 <select (change)="selectedCategory = $event.target.value">
    <option>EKOKosmetyki</option>
    <option>Dermokosmetyki</option>
    <option>Dla Mamy</option>
 </select>
+
 <ul class="category">
 <div class="row">
   <li class="col-md-6 product" *ngFor="let product of products | myfilter:selectedCategory" (click)="addToCart(product)"><h2>
-<i class="fa fa-gift" aria-hidden="true"></i> {{product.nazwa}}</h2>
-  <p>Zawartość: {{product.opis}}</p>
-  <p>Cena: {{product.cena}}</p>
-  <p>Kategoria: {{product.kategoria}}</p>
+<i class="fa fa-gift" aria-hidden="true"></i> {{product.name}}</h2>
+  <p>Zawartość: {{product.description}}</p>
+  <p>Cena: {{product.price}}</p>
+  <p>Kategoria: {{product.category}}</p>
   <div *ngIf="authenticated">
   <button class="pull-right"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button>
 
+ 
   </div>
   <div *ngIf="authenticated===false">
     <p><i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i> Dodawanie do koszyka tylko dla zalogowanych</p>
@@ -24,4 +27,27 @@
   
 </ul>
 
+-->
 
+
+<ul>
+<li *ngFor="let c of categories"><a (click)="selectByCategory(c.id)">{{c.name}}</a></li>
+</ul>
+
+<ul>
+ <li  *ngFor="let product of products" (click)="addToCart(product)">
+  <p>{{product.name}}</p>
+  <p>{{product.description}}</p>
+  <p>{{product.categoryID}}</p>
+  <p>{{product.price|number:'1.2-2'}}</p>
+  <div *ngIf="authenticated">
+  <button class="pull-right"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button>
+
+ 
+  </div>
+  <div *ngIf="authenticated===false">
+    <p><i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i> Dodawanie do koszyka tylko dla zalogowanych</p>
+  </div>
+  </li>
+
+  </ul>

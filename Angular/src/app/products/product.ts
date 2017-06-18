@@ -1,6 +1,7 @@
 export class Product{
-    nazwa:string;
-    opis:string;
-    cena:number;
-    kategoria:string;        
+    id: number;
+    categoryID: number;
+    name:string;
+    description:string;
+    price:number;        
     }

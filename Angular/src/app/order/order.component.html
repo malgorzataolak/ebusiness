@@ -93,6 +93,7 @@
   </div>
   <div class="form-group col-md-6">
   <label for="payment">Opcje płatności</label>
+  
     <div *ngFor="let p of paymentItems">
         <label>
         <input formControlName="payment" type="radio" name="payment" [value]="p.value">
@@ -105,6 +106,7 @@
   <button type="submit">POTWIERDZAM DANE</button>
   <a routerLink="/sendOrder" routerLinkActive="active">Złóż zamówienie <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></a>
   </div>
+
 </form>
 
 

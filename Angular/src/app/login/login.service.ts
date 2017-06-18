@@ -26,14 +26,15 @@ export class LoginService {
 
   public handleAuthentication(): boolean {
     console.log("Handling authentication");
-     this.auth0.parseHash((err, authResult) => {
+     this.auth0.parseHash(window.location.hash, (err, authResult) => {
        if (authResult && authResult.accessToken && authResult.idToken) {
          window.location.hash = '';
          this.setSession(authResult);
+         console.log(authResult);
          console.log("HERE");
          console.log(localStorage);
          this.success = true;
-         window.location.reload();
+         //window.location.reload();
          this.router.navigate(['/']);
        } else if (err) {
          this.router.navigate(['/']);
@@ -63,7 +64,6 @@ export class LoginService {
    }
 
    public isAuthenticated(): boolean {
-//a ok myslalam ze mowisz o wyciaganiuuuu 
      const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
      return new Date().getTime() < expiresAt;
    }

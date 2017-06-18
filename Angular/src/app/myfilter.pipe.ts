@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class MyFilterPipe implements PipeTransform{
-    transform(items: Array<any>, kategoria: string): Array<any> {
-        return items.filter(item => item.kategoria === kategoria);
+    transform(items: Array<any>, category: number): Array<any> {
+        return items.filter(item => item.categoryID === category);
     }
 }
