@@ -1,0 +1,40 @@
+# --- !Ups
+
+CREATE TABLE Products (
+ "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+ "categoryID" INTEGER NOT NULL,
+ "name" VARCHAR  NOT NULL,
+ "description" VARCHAR NOT NULL,
+ "price" FLOAT NOT NULL
+);
+
+CREATE TABLE Orders (
+ "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+ "productsList" VARCHAR NOT NULL,
+ "userID" VARCHAR NOT NULL,
+ "totalPrice" FLOAT NOT NULL,
+ "paymentType" VARCHAR NOT NULL,
+ "shipmentType" VARCHAR NOT NULL,
+ "address" VARCHAR NOT NULL,
+ "date" VARCHAR NOT NULL
+);
+
+CREATE TABLE Categories (
+ "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+ "name" VARCHAR NOT NULL
+);
+
+CREATE TABLE Carts (
+ "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+ "productID" INTEGER NOT NULL,
+ "userID" VARCHAR NOT NULL,
+ "productName" VARCHAR  NOT NULL,
+ "productPrice" FLOAT NOT NULL
+);
+
+# --- !Downs
+
+DROP TABLE Products;
+DROP TABLE Orders;
+DROP TABLE Categories;
+DROP TABLE Carts;
