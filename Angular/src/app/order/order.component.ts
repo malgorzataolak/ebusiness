@@ -78,6 +78,7 @@ makeOrder(event){
       }
        
     this.orderService.sendDataToPlay(this.dataForm.value, this.totalPrice, this.productCount, products);
+    
 }
 
 
