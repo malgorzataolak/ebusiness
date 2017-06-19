@@ -8,7 +8,7 @@
 GET     /                           @controllers.Application.index
 GET 	/getcategories				@controllers.Application.getCategories
 GET     /categoryproducts/:categoryID	    @controllers.Application.getProductsByCategory(categoryID: Int)
-GET 	/cart						@controllers.Application.getUserCart(userID: String)
+GET 	/cart/:userID						@controllers.Application.getUserCart(userID: String)
 
 POST	/addcartproduct				@controllers.Application.addCartProduct
 POST	/createorder				@controllers.Application.createOrder

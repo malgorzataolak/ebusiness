@@ -16,7 +16,7 @@ class CartsDAO @Inject()(protected val dbConfigProvider: DatabaseConfigProvider)
 
   val Carts = TableQuery[CartsTable]
 
-  def delete(id: Int): Future[Unit] = db.run(Carts.filter(_.id === id).delete).map { _ => () }
+  def delete(id: Int): Future[Unit] ={ db.run(Carts.filter(_.id === id).delete).map { _ => () }}
   def clearUserCart(userID: String): Future[Unit] = db.run(Carts.filter(_.userID === userID).delete).map { _ => () }
 
   def getByUser(userID: String): Future[List[CartsREST]] = {

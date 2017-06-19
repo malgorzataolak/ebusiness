@@ -1,5 +1,9 @@
 name := "ebiznesslick"
 
+maintainer := "Gosia Olak"
+
+dockerExposedPorts in Docker := Seq(9000, 9443)
+
 version := "1.0"
 
 lazy val `ebiznesslick` = (project in file(".")).enablePlugins(PlayScala)

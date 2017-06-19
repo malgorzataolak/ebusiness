@@ -90,6 +90,7 @@ class Application @Inject() (productsDAO: ProductsDAO, categoriesDAO: Categories
   		shipmentType = json.shipmentType, address = json.address, date = json.date)
 
   	ordersDAO.insert(newOrder)
+    cartsDAO.clearUserCart(json.userID)
   	Ok(request.body.asJson.get)
 
   }
