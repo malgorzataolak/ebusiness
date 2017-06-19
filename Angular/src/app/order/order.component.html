@@ -34,43 +34,16 @@
   <div class="row">
   <div class="form-group">
   <div class="col-md-6">
-  <label for="adress">Adres:</label>
+  <label for="address">Adres:</label>
   </div>
   <div class="col-md-6">
-  <textarea id="adress" formControlName="adress" placeholder="Adres" class=".form-control"></textarea>
+  <textarea id="address" formControlName="address" placeholder="Adres" class=".form-control"></textarea>
   </div>
   </div>
   </div>
-  <div class="row">
-  <div class="form-group">
-  <div class="col-md-6">
-  <label for="city">Miasto:</label>
-  </div>
-  <div class="col-md-6">
-  <textarea id="city" formControlName="city" placeholder="Miasto" class=".form-control"></textarea>
-  </div>
-  </div>
-  </div>
-  <div class="row">
-  <div class="form-group">
-    <div class="col-md-6">
-  <label for="zipCode">Kod Pocztowy:</label>
-  </div>
-  <div class="col-md-6">
-  <textarea id="zipCode" formControlName="zipCode" placeholder="Kod pocztowy" class=".form-control"></textarea>
-  </div>
-  </div>
-  </div>
-  <div class="row">
-  <div class="form-group">
-  <div class="col-md-6">
-  <label for="country">Kraj:</label>
-  </div>
-  <div class="col-md-6">
-  <textarea id="country" formControlName="country" placeholder="Kraj" class=".form-control"></textarea>
-  </div>
-  </div>
-  </div>
+  
+  
+  
   <div class="row">
   <div class="form-group">
   <div class="col-md-6">
@@ -108,5 +81,6 @@
   </div>
 
 </form>
+<h5 class="pull-right">{{totalPrice|number:'1.2-2'}}</h5>
 
 

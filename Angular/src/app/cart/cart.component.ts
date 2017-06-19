@@ -16,11 +16,11 @@ import { ActivatedRoute } from "@angular/router";
 export class CartComponent implements OnInit{
   title = 'Twoje produkty w koszyku';
 
-  cartProducts:CartProduct[];
+  
   constructor(private cartService: CartService, private route: ActivatedRoute){}
   ngOnInit() {
-    this.cartService.getProductsFromCart().subscribe(data => this.cartProducts = data);
-    console.log(this.cartProducts);
+    this.cartService.getProductsFromCart().subscribe(data => this.cartService.cartProducts = data);
+    
   }
 
 
@@ -29,4 +29,5 @@ export class CartComponent implements OnInit{
   
   this.cartService.deleteProductFromCart(productID);
   window.location.reload();}
+
 }

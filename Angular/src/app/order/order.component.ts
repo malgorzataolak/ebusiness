@@ -3,6 +3,8 @@ import { OrderService } from './order.service';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
 import { LoginService } from '../login/login.service';
+import {CartService } from "../cart/cart.service";
+
 
 
 
@@ -33,28 +35,51 @@ export class OrderComponent implements OnInit {
     {value: 'paypal', display: 'Platnosc metodą PayPal'}
   ]
 
-  constructor(private orderService: OrderService, private loginService: LoginService, private route: ActivatedRoute) { }
+  constructor(private orderService: OrderService, private cartService: CartService, private loginService: LoginService, private route: ActivatedRoute) { }
+  totalPrice=0;
+  productCount=0;
+
   ngOnInit(){
+
+      
+
+      this.productCount=this.cartService.cartProducts.length;
+
+      
+
+      for(var i in this.cartService.cartProducts){
+          this.totalPrice+=this.cartService.cartProducts[i].productPrice;
+
+      }
+
         this.dataForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      adress: new FormControl('', Validators.required),
-      city: new FormControl('', Validators.required),
-      zipCode: new FormControl('', Validators.required),
-      country: new FormControl('', Validators.required),
+      address: new FormControl('', Validators.required),
       phone: new FormControl('', Validators.required),
       delivery: new FormControl('', Validators.required),
       payment: new FormControl('', Validators.required)
       });
 
+      //console.log(this.dataForm);
+
 
 }
+
+
 
 makeOrder(event){
-    console.log(this.loginService.userProfile);
-    this.orderService.sendDataToPlay(this.dataForm.value);
+    var products="";
+     for(var i in this.cartService.cartProducts){
+          products+=this.cartService.cartProducts[i].productName;
+          products+=" ";
+
+      }
+       
+    this.orderService.sendDataToPlay(this.dataForm.value, this.totalPrice, this.productCount, products);
 }
+
 
 
 }

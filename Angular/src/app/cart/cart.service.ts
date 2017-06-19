@@ -5,8 +5,10 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CartService{
-    constructor(private http: Http) { }
 
+
+    constructor(private http: Http) { }
+    cartProducts:CartProduct[];
   getProductsFromCart() {
     var userID=localStorage.getItem('userID');
     const headers: Headers = new Headers();

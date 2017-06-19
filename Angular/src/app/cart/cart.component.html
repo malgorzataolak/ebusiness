@@ -1,23 +1,22 @@
 <h1>{{title}}</h1>
 <div class="row tag">
-  <p class="col-md-3">Nazwa</p>
-  <p class="col-md-3">Kategoria</p>
-  <p class="col-md-3">Cena</p>
-  <p class="col-md-3">Usuń z koszyka</p>
+  <p class="col-md-4">Nazwa</p>
+  <p class="col-md-4">Cena</p>
+  <p class="col-md-4">Usuń z koszyka</p>
   </div>
 <ul class="category">
-  <li *ngFor="let p of cartProducts" (click)=deleteProduct(p.id)>
+  <li *ngFor="let p of this.cartService.cartProducts" (click)=deleteProduct(p.id)>
   <div class="row">
 
-  <p class="col-md-3">{{p.productName}}</p>
-  <p class="col-md-3">{{p.productPrice|number:'1.2-2'}}</p>
-  <div class="col-md-3">
+  <p class="col-md-4">{{p.productName}}</p>
+  <p class="col-md-4">{{p.productPrice|number:'1.2-2'}}</p>
+  <div class="col-md-4">
   <button class="delete" type="submit"><i class="fa fa-cart-arrow-down fa-2x" aria-hidden="true"></i></button>
   </div>
   </div>
   </li> 
 </ul>
 <div class="pull-right sum">
-<h2>Razem: 50zł</h2>
 <a routerLink="/order" routerLinkActive="active">Przejdź do formularza zamówienia <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></a>
 </div>
+
