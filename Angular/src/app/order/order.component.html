@@ -1,5 +1,7 @@
 <h1>{{title}}</h1>
 
+ <h4>Do zapłaty: {{totalPrice|number:'1.2-2'}}zł</h4>
+ <h4>Ilość produktów: {{this.productCount}}</h4>
 
 <form [formGroup]="dataForm" (ngSubmit)="makeOrder($event)">
 <div class="row">
@@ -81,6 +83,6 @@
   </div>
 
 </form>
-<h5 class="pull-right">{{totalPrice|number:'1.2-2'}}</h5>
+
 
 

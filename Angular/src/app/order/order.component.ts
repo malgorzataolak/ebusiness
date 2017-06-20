@@ -42,7 +42,7 @@ export class OrderComponent implements OnInit {
   ngOnInit(){
 
       
-
+      if(this.cartService.cartProducts){
       this.productCount=this.cartService.cartProducts.length;
 
       
@@ -50,6 +50,7 @@ export class OrderComponent implements OnInit {
       for(var i in this.cartService.cartProducts){
           this.totalPrice+=this.cartService.cartProducts[i].productPrice;
 
+      }
       }
 
         this.dataForm = new FormGroup({
